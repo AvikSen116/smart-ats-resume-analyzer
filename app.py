@@ -35,9 +35,13 @@ def main():
         st.subheader("About")
         st.write("""
         This smart ATS helps you:
+        
         ✅ Evaluate resume-job description match
+        
         ✅ Identify missing keywords
+        
         ✅ Get personalized improvement suggestions
+        
         """)
 
     # Main content
