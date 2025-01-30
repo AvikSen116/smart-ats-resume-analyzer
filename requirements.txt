@@ -1,0 +1,6 @@
+streamlit
+streamlit_extras
+PyPDF2==3.0.1
+google.generativeai
+python-dotenv
+
