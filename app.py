@@ -31,13 +31,13 @@ def main():
 
     # Sidebar UI
     with st.sidebar:
-        st.title("🎯 SARA Smart ATS")
+        st.title("🔥 S A R A - Smart ATS")
         st.subheader("About")
         st.write("""
         This smart ATS helps you:
-        - Evaluate resume-job description match
-        - Identify missing keywords
-        - Get personalized improvement suggestions
+        ✅ Evaluate resume-job description match
+        ✅ Identify missing keywords
+        ✅ Get personalized improvement suggestions
         """)
 
     # Main content
