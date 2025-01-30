@@ -1,14 +1,15 @@
-import streamlit as st  # type: ignore
-from streamlit_extras.add_vertical_space import add_vertical_space  # type: ignore
+import streamlit as st
+from streamlit_extras.add_vertical_space import add_vertical_space
 import os
 import json
-from dotenv import load_dotenv  # type: ignore
+from dotenv import load_dotenv
 from helper import configure_genai, get_gemini_response, extract_pdf_text, prepare_prompt
 
 def init_session_state():
     """Initialize session state variables."""
     if 'processing' not in st.session_state:
         st.session_state.processing = False
+
 
 def main():
     # Load environment variables
@@ -17,31 +18,27 @@ def main():
     # Initialize session state
     init_session_state()
     
-    # Configure Generative AI API
+    # Configure Generative AI
     api_key = os.getenv("GOOGLE_API_KEY")
     if not api_key:
         st.error("Please set the GOOGLE_API_KEY in your .env file")
         return
-    
+        
     try:
         configure_genai(api_key)
     except Exception as e:
         st.error(f"Failed to configure API: {str(e)}")
         return
 
-    # Sidebar UI
+    # Sidebar
     with st.sidebar:
-        st.title("🔥 S A R A - Smart ATS")
+        st.title("🎯 Smart ATS")
         st.subheader("About")
         st.write("""
         This smart ATS helps you:
-        
-        ✅ Evaluate resume-job description match
-        
-        ✅ Identify missing keywords
-        
-        ✅ Get personalized improvement suggestions
-        
+        - Evaluate resume-job description match
+        - Identify missing keywords
+        - Get personalized improvement suggestions
         """)
 
     # Main content
@@ -78,7 +75,7 @@ def main():
                 # Extract text from PDF
                 resume_text = extract_pdf_text(uploaded_file)
                 
-                # Prepare input prompt
+                # Prepare prompt
                 input_prompt = prepare_prompt(resume_text, jd)
                 
                 # Get and parse response
