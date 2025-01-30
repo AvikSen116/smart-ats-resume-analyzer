@@ -31,7 +31,7 @@ def main():
 
     # Sidebar UI
     with st.sidebar:
-        st.title("🎯 Smart ATS")
+        st.title("🎯 SARA Smart ATS")
         st.subheader("About")
         st.write("""
         This smart ATS helps you:
